@@ -1,0 +1,45 @@
+{
+  "name": "bookmark-website",
+  "version": "1.0.0",
+  "description": "Bookmark Management",
+  "main": "src/index.html",
+  "scripts": {
+    "dev": "npx parcel src/index.html",
+    "format": "npx prettier --write src/**/*.ts src/**/*.tsx && npm run lint",
+    "lint": "npx eslint --fix src/**/*.ts src/**/*.tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Asamac",
+  "license": "MIT",
+  "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.10",
+    "minireset.css": "^0.0.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-icons": "^3.6.1",
+    "react-redux": "^7.0.3",
+    "redux": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.8.15",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-redux": "^7.0.9",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-emotion": "^10.0.9",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "parcel-bundler": "^1.12.3",
+    "prettier": "^1.17.1",
+    "typescript": "^3.4.5"
+  }
+}
