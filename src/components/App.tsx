@@ -12,14 +12,15 @@ import { TagListContainer } from './TagList'
 import { BookmarkListContainer } from './BookmarkList'
 
 const globalStyle = css`
-  html, body {
+  html,
+  body {
     font-family: 'Noto Serif', serif;
   }
 `
 
 const App = (): JSX.Element => (
   <Provider>
-    <Global styles={ globalStyle } />
+    <Global styles={globalStyle} />
     <Layout>
       <HeaderContainer />
       <SideBarContainer>
