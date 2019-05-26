@@ -36,7 +36,6 @@ export const style = css`
 
     width: 100%;
     height: 100%;
-    text-indent: 1em;
 
     text-decoration: none;
   }
