@@ -4,17 +4,5 @@ export interface Props {
 }
 
 export interface ContainerProps {
-  isToggleSlidePanel?: boolean
-}
-
-export interface State {
-  tags: string[]
-}
-
-export interface StateProps {
-  items: string[]
-}
-
-export interface DispatchProps {
-  onItemClick: (index: number) => void
+  toggleable?: boolean
 }

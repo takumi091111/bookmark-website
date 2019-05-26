@@ -18,7 +18,7 @@ const App = (): JSX.Element => (
         <TagListContainer />
       </SideBar>
       <SlidePanelContainer>
-        <TagListContainer />
+        <TagListContainer toggleable />
       </SlidePanelContainer>
       <Main>
         <BookmarkListContainer />
