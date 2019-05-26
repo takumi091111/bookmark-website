@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/core'
 import { style } from './BookmarkList.css'
 import { Props } from './types'
-import BookmarkListItem from './BookmarkListItem/BookmarkListItem'
+import { BookmarkListItem } from './BookmarkListItem'
 
 const createItems = (props: Props): JSX.Element[] => {
   const { items, onItemClick } = props

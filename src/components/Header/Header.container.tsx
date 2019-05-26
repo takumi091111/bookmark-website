@@ -1,37 +1,33 @@
 import * as React from 'react'
-import { Dispatch } from 'redux'
-import { Provider, connect } from 'react-redux'
-import { store, SET_SEARCH_QUERY, TOGGLE_SLIDE_PANEL } from '../../store/index'
-import { State, StateProps, DispatchProps } from './types'
-import Header from './Header'
+import { Subscribe } from 'unstated'
+import { SearchContainer } from '../../containers/Search'
+import { SlidePanelContainer } from '../../containers/SlidePanel'
+import HeaderComponent from './Header'
 
-const mapStateToProps = (state: State): StateProps => ({
-  searchQuery: state.searchQuery
-})
+const Header = (): JSX.Element => (
+  <Subscribe to={[SearchContainer, SlidePanelContainer]}>
+    {(
+      searchContainer: SearchContainer,
+      slidePanelContainer: SlidePanelContainer
+    ) => {
+      const { searchQuery } = searchContainer.state
 
-const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
-  onMenuClick: (_event): void => {
-    dispatch(TOGGLE_SLIDE_PANEL(store.getState().isPanelOpen))
-  },
-  onSearchInputChange: (event): void => {
-    dispatch(SET_SEARCH_QUERY(event.currentTarget.value))
-  },
-  onSearchSubmit: (_event): void => {
-    console.log('query', store.getState().searchQuery)
-  }
-})
+      const handleSearchInputChange = (
+        event: React.ChangeEvent<HTMLInputElement>
+      ): void => {
+        searchContainer.changeQuery(event.currentTarget.value)
+      }
 
-const Container = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Header)
+      return (
+        <HeaderComponent
+          searchQuery={searchQuery}
+          onMenuClick={() => slidePanelContainer.toggle()}
+          onSearchInputChange={handleSearchInputChange}
+          onSearchSubmit={() => searchContainer.search()}
+        />
+      )
+    }}
+  </Subscribe>
+)
 
-const HeaderContainer = (): JSX.Element => {
-  return (
-    <Provider store={store}>
-      <Container />
-    </Provider>
-  )
-}
-
-export default HeaderContainer
+export default Header

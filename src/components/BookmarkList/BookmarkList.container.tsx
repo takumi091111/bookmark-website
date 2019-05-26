@@ -1,29 +1,25 @@
 import * as React from 'react'
-import { Dispatch } from 'redux'
-import { Provider, connect } from 'react-redux'
-import { store } from '../../store/index'
-import { State, StateProps, DispatchProps } from './types'
-import BookmarkList from './BookmarkList'
+import { Subscribe } from 'unstated'
+import { BookmarkContainer } from '../../containers/Bookmark'
+import BookmarkListComponent from './BookmarkList'
 
-const mapStateToProps = (state: State): StateProps => ({
-  items: state.bookmarks
-})
+const BookmarkList = (): JSX.Element => (
+  <Subscribe to={[BookmarkContainer]}>
+    {(container: BookmarkContainer) => {
+      const bookmarks = container.state.bookmarks
 
-const mapDispatchToProps = (_dispatch: Dispatch): DispatchProps => ({
-  onItemClick: (index: number): void => {
-    console.log(store.getState().bookmarks[index])
-  }
-})
+      const handleItemClick = (index: number): void => {
+        console.table(bookmarks[index])
+      }
 
-const Container = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(BookmarkList)
-
-const BookmarkListContainer = (): JSX.Element => (
-  <Provider store={store}>
-    <Container />
-  </Provider>
+      return (
+        <BookmarkListComponent
+          items={bookmarks}
+          onItemClick={handleItemClick}
+        />
+      )
+    }}
+  </Subscribe>
 )
 
-export default BookmarkListContainer
+export default BookmarkList
