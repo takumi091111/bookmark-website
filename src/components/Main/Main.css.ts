@@ -28,6 +28,8 @@ export const style = (theme?: Theme): SerializedStyles => css`
   }
 
   @media (max-width: 767px) {
+    padding: 0 5px;
+
     grid-column: 1 / 2;
 
     overflow-y: scroll;

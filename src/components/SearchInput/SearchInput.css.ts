@@ -4,6 +4,7 @@ export const style = css`
   color: inherit;
   background-color: transparent;
 
+  font-size: 1em;
   font-family: inherit;
 
   width: calc(100% - 100px);
@@ -12,7 +13,7 @@ export const style = css`
 
   padding: 0 10px;
 
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     width: 100%;
   }
 `
