@@ -2,8 +2,8 @@ import * as React from 'react'
 import { Provider } from 'unstated'
 
 import { Layout } from './Layout'
-import { Main } from './Main'
-import { SideBar } from './SideBar'
+import { MainContainer } from './Main'
+import { SideBarContainer } from './SideBar'
 
 import { HeaderContainer } from './Header'
 import { SlidePanelContainer } from './SlidePanel'
@@ -14,15 +14,15 @@ const App = (): JSX.Element => (
   <Provider>
     <Layout>
       <HeaderContainer />
-      <SideBar>
+      <SideBarContainer>
         <TagListContainer />
-      </SideBar>
+      </SideBarContainer>
       <SlidePanelContainer>
         <TagListContainer toggleable />
       </SlidePanelContainer>
-      <Main>
+      <MainContainer>
         <BookmarkListContainer />
-      </Main>
+      </MainContainer>
     </Layout>
   </Provider>
 )

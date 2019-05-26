@@ -1,20 +1,25 @@
 import * as React from 'react'
 import { Subscribe } from 'unstated'
+import { ThemeContainer } from '../../containers/Theme'
 import { SlidePanelContainer } from '../../containers/SlidePanel'
 import SlidePanelComponent from './SlidePanel'
+import { Panel } from '../Panel'
 import { ContainerProps } from './types'
 
 const SlidePanel = (props: ContainerProps): JSX.Element => (
-  <Subscribe to={[SlidePanelContainer]}>
-    {(container: SlidePanelContainer) => {
+  <Subscribe to={[ThemeContainer, SlidePanelContainer]}>
+    {(
+      themeContainer: ThemeContainer,
+      slidePanelContainer: SlidePanelContainer
+    ) => {
       const { children } = props
-      const { isOpen } = container.state
+      const { isOpen } = slidePanelContainer.state
 
       return (
         <SlidePanelComponent
           isOpen={isOpen}
-          onOutsideClick={() => container.toggle()}>
-          {children}
+          onOutsideClick={() => slidePanelContainer.toggle()}>
+          <Panel theme={themeContainer.state.theme}>{children}</Panel>
         </SlidePanelComponent>
       )
     }}

@@ -9,9 +9,9 @@ const handleClick = (event: MouseEvent<HTMLDivElement>): void => {
 }
 
 const Panel = (props: Props): JSX.Element => {
-  const { children } = props
+  const { children, theme } = props
   return (
-    <div css={style} onClick={handleClick}>
+    <div css={style(theme)} onClick={handleClick}>
       {children}
     </div>
   )

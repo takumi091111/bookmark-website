@@ -2,7 +2,6 @@
 import { jsx, css } from '@emotion/core'
 import { style } from './SlidePanel.css'
 import { Props } from './types'
-import { Panel } from './Panel'
 
 const SlidePanel = (props: Props): JSX.Element => {
   const { children, isOpen, onOutsideClick } = props
@@ -14,7 +13,7 @@ const SlidePanel = (props: Props): JSX.Element => {
 
   return (
     <div css={overrideStyle} onClick={onOutsideClick}>
-      <Panel>{children}</Panel>
+      {children}
     </div>
   )
 }

@@ -4,9 +4,9 @@ import { style } from './SideBar.css'
 import { Props } from './types'
 
 const SideBar = (props: Props): JSX.Element => {
-  const { children } = props
+  const { children, theme } = props
 
-  return <aside css={style}>{children}</aside>
+  return <aside css={style(theme)}>{children}</aside>
 }
 
 export default SideBar

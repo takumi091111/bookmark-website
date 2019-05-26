@@ -1,3 +1,4 @@
 import SideBar from './SideBar'
+import SideBarContainer from './SideBar.container'
 
-export { SideBar }
+export { SideBar, SideBarContainer }

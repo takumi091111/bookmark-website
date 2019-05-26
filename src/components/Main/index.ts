@@ -1,3 +1,4 @@
 import Main from './Main'
+import MainContainer from './Main.container'
 
-export { Main }
+export { Main, MainContainer }

@@ -4,10 +4,10 @@ import { style } from './Main.css'
 import { Props } from './types'
 
 const Main = (props: Props): JSX.Element => {
-  const { children } = props
+  const { children, theme } = props
 
   return (
-    <div css={style}>
+    <div css={style(theme)}>
       <main>{children}</main>
     </div>
   )

@@ -9,13 +9,14 @@ import { Mobile } from './Mobile'
 const Header = (props: Props): JSX.Element => {
   const {
     searchQuery,
+    theme,
     onSearchInputChange,
     onSearchSubmit,
     onMenuClick
   } = props
 
   return (
-    <header css={style}>
+    <header css={style(theme)}>
       <Desktop
         searchQuery={searchQuery}
         onSearchInputChange={onSearchInputChange}

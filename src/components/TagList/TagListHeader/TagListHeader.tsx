@@ -3,7 +3,7 @@ import { jsx } from '@emotion/core'
 import { style } from './TagListHeader.css'
 
 const TagListHeader = (): JSX.Element => (
-  <li css={style}>
+  <li className="tag-list-header" css={style}>
     <h1>Tags</h1>
   </li>
 )

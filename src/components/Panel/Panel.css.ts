@@ -3,10 +3,13 @@ import { Theme } from '../../interfaces/Theme'
 
 export const style = (theme?: Theme): SerializedStyles => css`
   color: ${theme ? theme.colors.text : 'inherit'};
-  background-color: ${theme ? theme.colors.background : 'blue'};
+  background-color: ${theme ? theme.colors.background : 'hotpink'};
 
-  grid-column: 1 / 2;
-  grid-row: 1 / 3;
+  position: relative;
+  width: 80%;
+  height: 100%;
+
+  overflow-y: scroll;
 
   a {
     color: ${theme ? theme.colors.text : 'inherit'};
@@ -17,9 +20,5 @@ export const style = (theme?: Theme): SerializedStyles => css`
       background-color: ${theme ? theme.colors.highlight : 'green'};
     }
     border-color: ${theme ? theme.colors.border : 'inherit'};
-  }
-
-  @media (max-width: 767px) {
-    display: none;
   }
 `
