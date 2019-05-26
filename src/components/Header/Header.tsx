@@ -3,8 +3,8 @@ import { jsx } from '@emotion/core'
 import { style } from './Header.css'
 import { Props } from './types'
 
-import Desktop from './Desktop/Desktop'
-import Mobile from './Mobile/Mobile'
+import { Desktop } from './Desktop'
+import { Mobile } from './Mobile'
 
 const Header = (props: Props): JSX.Element => {
   const {

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import TagListHeader from './TagListHeader/TagListHeader'
-import TagListItem from './TagListItem/TagListItem'
+import { TagListHeader } from './TagListHeader'
+import { TagListItem } from './TagListItem'
 import { style } from './TagList.css'
 import { Props } from './types'
 

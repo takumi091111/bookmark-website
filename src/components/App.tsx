@@ -1,25 +1,30 @@
 import * as React from 'react'
-import Layout from './Layout/Layout'
-import Main from './Main/Main'
-import SideBar from './SideBar/SideBar'
-import Header from './Header/Header.container'
-import TagList from './TagList/TagList.container'
-import SlidePanel from './SlidePanel/SlidePanel.container'
-import BookmarkList from './BookmarkList/BookmarkList.container'
+import { Provider } from 'unstated'
+
+import { Layout } from './Layout'
+import { Main } from './Main'
+import { SideBar } from './SideBar'
+
+import { HeaderContainer } from './Header'
+import { SlidePanelContainer } from './SlidePanel'
+import { TagListContainer } from './TagList'
+import { BookmarkListContainer } from './BookmarkList'
 
 const App = (): JSX.Element => (
-  <Layout>
-    <Header />
-    <SideBar>
-      <TagList />
-    </SideBar>
-    <SlidePanel>
-      <TagList isToggleSlidePanel />
-    </SlidePanel>
-    <Main>
-      <BookmarkList />
-    </Main>
-  </Layout>
+  <Provider>
+    <Layout>
+      <HeaderContainer />
+      <SideBar>
+        <TagListContainer />
+      </SideBar>
+      <SlidePanelContainer>
+        <TagListContainer />
+      </SlidePanelContainer>
+      <Main>
+        <BookmarkListContainer />
+      </Main>
+    </Layout>
+  </Provider>
 )
 
 export default App

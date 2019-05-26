@@ -1,33 +1,24 @@
 import * as React from 'react'
-import { Dispatch } from 'redux'
-import { Provider, connect } from 'react-redux'
-import { store, TOGGLE_SLIDE_PANEL } from '../../store/index'
-import { ContainerProps, State, StateProps, DispatchProps } from './types'
-import SlidePanel from './SlidePanel'
+import { Subscribe } from 'unstated'
+import { SlidePanelContainer } from '../../containers/SlidePanel'
+import SlidePanelComponent from './SlidePanel'
+import { ContainerProps } from './types'
 
-const mapStateToProps = (state: State): StateProps => ({
-  isOpen: state.isPanelOpen
-})
+const SlidePanel = (props: ContainerProps): JSX.Element => (
+  <Subscribe to={[SlidePanelContainer]}>
+    {(container: SlidePanelContainer) => {
+      const { children } = props
+      const { isOpen } = container.state
 
-const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
-  onItemClick: event => {
-    console.log(event.currentTarget.children[0])
-    dispatch(TOGGLE_SLIDE_PANEL(store.getState().isPanelOpen))
-  },
-  onOutsideClick: _event => {
-    dispatch(TOGGLE_SLIDE_PANEL(store.getState().isPanelOpen))
-  }
-})
-
-const Container = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SlidePanel)
-
-const SlidePanelContainer = (props: ContainerProps): JSX.Element => (
-  <Provider store={store}>
-    <Container>{props.children}</Container>
-  </Provider>
+      return (
+        <SlidePanelComponent
+          isOpen={isOpen}
+          onOutsideClick={() => container.toggle()}>
+          {children}
+        </SlidePanelComponent>
+      )
+    }}
+  </Subscribe>
 )
 
-export default SlidePanelContainer
+export default SlidePanel
