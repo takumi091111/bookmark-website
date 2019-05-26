@@ -14,7 +14,7 @@ import { BookmarkListContainer } from './BookmarkList'
 const globalStyle = css`
   html,
   body {
-    font-family: 'Noto Serif', serif;
+    font-family: 'Noto Serif JP', serif;
   }
 `
 
