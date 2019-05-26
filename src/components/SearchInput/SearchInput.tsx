@@ -22,7 +22,7 @@ const SearchInput = (props: Props): JSX.Element => {
     <input
       type="text"
       css={style}
-      value={value}
+      defaultValue={value}
       placeholder={placeholder}
       onChange={onChange}
       onKeyDown={handleKeyDown}
