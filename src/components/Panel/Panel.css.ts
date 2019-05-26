@@ -2,6 +2,10 @@ import { css, SerializedStyles } from '@emotion/core'
 import { Theme } from '../../interfaces/Theme'
 
 export const style = (theme?: Theme): SerializedStyles => css`
+  &:hover {
+    overflow-y: scroll;
+  }
+
   color: ${theme ? theme.colors.text : 'inherit'};
   background-color: ${theme ? theme.colors.background : 'hotpink'};
 
@@ -9,7 +13,7 @@ export const style = (theme?: Theme): SerializedStyles => css`
   width: 80%;
   height: 100%;
 
-  overflow-y: scroll;
+  overflow-y: hidden;
 
   a {
     color: ${theme ? theme.colors.text : 'inherit'};
@@ -20,5 +24,9 @@ export const style = (theme?: Theme): SerializedStyles => css`
       background-color: ${theme ? theme.colors.highlight : 'green'};
     }
     border-color: ${theme ? theme.colors.border : 'inherit'};
+  }
+
+  @media (max-width: 767px) {
+    overflow-y: scroll;
   }
 `
