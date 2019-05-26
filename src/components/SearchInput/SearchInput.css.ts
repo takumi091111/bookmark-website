@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 
 export const style = css`
-  color: white;
+  color: inherit;
   background-color: transparent;
 
   width: calc(100% - 100px);
