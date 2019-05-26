@@ -9,16 +9,3 @@ export interface Props {
 export interface ContainerProps {
   children?: ReactNode
 }
-
-export interface State {
-  isPanelOpen: boolean
-}
-
-export interface StateProps {
-  isOpen: boolean
-}
-
-export interface DispatchProps {
-  onItemClick: (event: MouseEvent<HTMLLIElement>) => void
-  onOutsideClick: (event: MouseEvent<HTMLDivElement>) => void
-}
