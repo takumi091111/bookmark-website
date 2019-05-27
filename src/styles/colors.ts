@@ -5,16 +5,16 @@ const light: Theme = {
     background: '#F4F4E8',
     text: '#393A30',
     highlight: '#00917C',
-    border: '#ACAE89'
+    border: '#E3E3D8'
   }
 }
 
 const dark: Theme = {
   colors: {
     background: '#393A30',
-    text: '#F4F4E8',
-    highlight: '#FFFFFF',
-    border: '#ACAE89'
+    text: '#B3B3AA',
+    highlight: '#32332A',
+    border: '#58594A'
   }
 }
 
