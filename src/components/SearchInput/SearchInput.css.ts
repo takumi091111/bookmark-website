@@ -3,6 +3,7 @@ import { css } from '@emotion/core'
 export const style = css`
   &::placeholder {
     color: inherit;
+    opacity: 0.5;
   }
 
   color: inherit;
@@ -19,6 +20,5 @@ export const style = css`
 
   @media (min-width: 768px) {
     width: 100%;
-    padding: 0 15px;
   }
 `

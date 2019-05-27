@@ -10,6 +10,8 @@ export const style = css`
   grid-template-columns: 200px 1fr;
   grid-template-rows: 50px 1fr;
 
+  padding: 10px;
+
   overflow: hidden;
 
   @media (max-width: 767px) {
