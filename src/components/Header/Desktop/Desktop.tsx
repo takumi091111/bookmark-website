@@ -12,14 +12,14 @@ const Desktop = (props: Props): JSX.Element => {
 
   return (
     <div css={style}>
+      <Icon onClick={onSearchSubmit}>
+        <IoIosSearch />
+      </Icon>
       <SearchInput
         value={searchQuery}
         onChange={onSearchInputChange}
         onEnterKeyDown={onSearchSubmit}
       />
-      <Icon onClick={onSearchSubmit}>
-        <IoIosSearch />
-      </Icon>
     </div>
   )
 }
