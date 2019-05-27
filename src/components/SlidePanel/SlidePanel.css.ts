@@ -10,11 +10,15 @@ export const style = css`
   height: 100vh;
 
   > div {
-    box-shadow: 1px 0px 10px -1px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 0px 10px -1px rgba(0, 0, 0, 0.15);
   }
 
-  transition: transform 0.5s ease;
+  transition: transform 0.35s ease;
 
   overflow-y: hidden;
   z-index: 1;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `

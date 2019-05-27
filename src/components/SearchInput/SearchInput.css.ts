@@ -1,6 +1,10 @@
 import { css } from '@emotion/core'
 
 export const style = css`
+  &::placeholder {
+    color: inherit;
+  }
+
   color: inherit;
   background-color: transparent;
 
@@ -15,5 +19,6 @@ export const style = css`
 
   @media (min-width: 768px) {
     width: 100%;
+    padding: 0 15px;
   }
 `
