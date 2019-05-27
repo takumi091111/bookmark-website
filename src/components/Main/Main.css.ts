@@ -3,7 +3,7 @@ import { Theme } from '../../interfaces/Theme'
 
 export const style = (theme?: Theme): SerializedStyles => css`
   &:hover {
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   color: ${theme ? theme.colors.text : 'inherit'};
