@@ -25,7 +25,12 @@
     "react"
   ],
   "rules": {
-    "react/jsx-uses-react": "error",
+    "no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "jsx"
+      }
+    ],
     "react/jsx-uses-vars": "error",
     "@typescript-eslint/indent": ["error", 2],
     "@typescript-eslint/member-delimiter-style": ["warn", {
@@ -43,6 +48,7 @@
       "allowTypedFunctionExpressions": true
     }],
     "@typescript-eslint/no-unused-vars": ["warn", {
+      "varsIgnorePattern": "jsx",
       "argsIgnorePattern": "^_"
     }],
     "@typescript-eslint/no-var-requires": ["off"],
