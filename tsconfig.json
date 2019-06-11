@@ -3,7 +3,18 @@
     "target": "es2018",
     "module": "commonjs",
     "jsx": "react",
+    "jsxFactory": "jsx",
     "strict": true,
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+    "baseUrl": "./src",
+    "paths": {
+      "~*": ["./*"]
+    }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
