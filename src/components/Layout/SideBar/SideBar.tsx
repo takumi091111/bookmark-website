@@ -3,7 +3,7 @@ import { style } from './SideBar.css'
 import { Props } from './types'
 
 const SideBar = ({ children }: Props): JSX.Element => (
-  <aside css={style}>{children}</aside>
+  <div css={style}>{children}</div>
 )
 
 export default SideBar

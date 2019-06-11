@@ -1,8 +1,7 @@
-/** @jsx jsx */
 import { jsx } from '@emotion/core'
 import { style } from './Mobile.css'
 import { DefaultProps } from './types'
-import Icon from '../../Icon/Icon'
+import Icon from '../../IconButton/IconButton'
 import { IoIosMenu, IoIosSearch } from 'react-icons/io'
 
 const Default = (props: DefaultProps): JSX.Element => {

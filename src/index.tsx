@@ -1,6 +1,6 @@
-import * as React from 'react'
+import { jsx } from '@emotion/core'
 import { render } from 'react-dom'
-import App from './components/App'
+import App from '~/components/App'
 
 import 'minireset.css'
 const UNSTATED = require('unstated-debug') // eslint-disable-line no-unused-vars

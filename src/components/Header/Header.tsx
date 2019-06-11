@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import { jsx } from '@emotion/core'
 import { style } from './Header.css'
 import { Props } from './types'
@@ -9,14 +8,13 @@ import { Mobile } from './Mobile'
 const Header = (props: Props): JSX.Element => {
   const {
     searchQuery,
-    theme,
     onSearchInputChange,
     onSearchSubmit,
     onMenuClick
   } = props
 
   return (
-    <header css={style(theme)}>
+    <header css={style}>
       <Desktop
         searchQuery={searchQuery}
         onSearchInputChange={onSearchInputChange}

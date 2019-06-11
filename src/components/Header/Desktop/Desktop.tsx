@@ -1,10 +1,9 @@
-/** @jsx jsx */
 import { jsx } from '@emotion/core'
 import { style } from './Desktop.css'
 import { Props } from './types'
 
 import SearchInput from '../../SearchInput/SearchInput'
-import Icon from '../../Icon/Icon'
+import Icon from '../../IconButton/IconButton'
 import { IoIosSearch } from 'react-icons/io'
 
 const Desktop = (props: Props): JSX.Element => {

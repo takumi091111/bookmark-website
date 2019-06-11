@@ -1,4 +1,5 @@
-import React, { useState, Fragment } from 'react'
+import { jsx } from '@emotion/core'
+import { useState, Fragment } from 'react'
 import { Props } from './types'
 import Default from './Default'
 import Searching from './Searching'

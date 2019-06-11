@@ -5,6 +5,8 @@ export const style = css`
     border-bottom: 0px;
   }
 
+  color: inherit;
+
   position: relative;
   width: 100%;
   height: 50px;
@@ -19,5 +21,5 @@ export const style = css`
     line-height: 50px;
   }
 
-  border-bottom: 1px solid;
+  border-bottom: 1px solid var(--border-color_base, white);
 `

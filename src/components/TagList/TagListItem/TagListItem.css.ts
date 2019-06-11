@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 
 export const style = css`
   &:hover {
-    background-color: green;
+    background-color: var(--background-color_hover, green);
   }
 
   position: relative;
@@ -12,6 +12,8 @@ export const style = css`
   transition: background-color 0.5s cubic-bezier(0, 0.5, 0, 1);
 
   a {
+    color: inherit;
+
     position: absolute;
 
     width: 100%;

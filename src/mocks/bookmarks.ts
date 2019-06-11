@@ -1,4 +1,4 @@
-import { Bookmark } from '../interfaces/Bookmark'
+import { Bookmark } from '~/interfaces/Bookmark'
 
 export const Bookmarks: Bookmark[] = [
   { title: 'Example A', url: 'https://example.com/A', createdAt: new Date() },

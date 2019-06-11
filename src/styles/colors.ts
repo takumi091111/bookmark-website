@@ -1,10 +1,10 @@
-import { Theme } from '../interfaces/Theme'
+import { Theme } from '~/interfaces/Theme'
 
 const light: Theme = {
   colors: {
     background: '#F4F4E8',
     text: '#393A30',
-    highlight: '#00917C',
+    highlight: '#E6E6DA',
     border: '#E3E3D8'
   }
 }

@@ -1,26 +1,25 @@
-import * as React from 'react'
+import { jsx } from '@emotion/core'
 import { Subscribe } from 'unstated'
-import { TagContainer } from '../../containers/Tag'
-import { SlidePanelContainer } from '../../containers/SlidePanel'
-import TagListComponent from './TagList'
 import { ContainerProps } from './types'
+import { AppContainer } from '~/containers/App'
+import TagList from './TagList'
 
-const TagList = (props: ContainerProps): JSX.Element => (
-  <Subscribe to={[TagContainer, SlidePanelContainer]}>
-    {(tagContainer: TagContainer, slidePanelContainer: SlidePanelContainer) => {
+const TagListContainer = (props: ContainerProps): JSX.Element => (
+  <Subscribe to={[AppContainer]}>
+    {(container: AppContainer) => {
       const { toggleable } = props
-      const { tags } = tagContainer.state
+      const { tags } = container.state
 
       const handleItemClick = (index: number): void => {
         console.table(tags[index])
         if (toggleable) {
-          slidePanelContainer.toggle()
+          container.toggleSidePanel()
         }
       }
 
-      return <TagListComponent items={tags} onItemClick={handleItemClick} />
+      return <TagList items={tags} onItemClick={handleItemClick} />
     }}
   </Subscribe>
 )
 
-export default TagList
+export default TagListContainer

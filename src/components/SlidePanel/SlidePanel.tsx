@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 import { style } from './SlidePanel.css'
 import { Props } from './types'

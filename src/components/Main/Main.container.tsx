@@ -1,18 +1,18 @@
-import * as React from 'react'
+import { jsx } from '@emotion/core'
 import { Subscribe } from 'unstated'
-import { ThemeContainer } from '../../containers/Theme'
-import MainComponent from './Main'
+import { AppContainer } from '~/containers/App'
 import { Props } from './types'
+import Main from './Main'
 
-const Main = (props: Props): JSX.Element => (
-  <Subscribe to={[ThemeContainer]}>
-    {(container: ThemeContainer) => {
+const MainContainer = (props: Props): JSX.Element => (
+  <Subscribe to={[AppContainer]}>
+    {(container: AppContainer) => {
       const { children } = props
       const { theme } = container.state
 
-      return <MainComponent theme={theme}>{children}</MainComponent>
+      return <Main theme={theme}>{children}</Main>
     }}
   </Subscribe>
 )
 
-export default Main
+export default MainContainer

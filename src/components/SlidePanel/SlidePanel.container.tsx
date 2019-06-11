@@ -1,29 +1,25 @@
-import * as React from 'react'
+import { jsx } from '@emotion/core'
 import { Subscribe } from 'unstated'
-import { ThemeContainer } from '../../containers/Theme'
-import { SlidePanelContainer } from '../../containers/SlidePanel'
-import SlidePanelComponent from './SlidePanel'
-import { Panel } from '../Panel'
+import { AppContainer } from '~/containers/App'
 import { ContainerProps } from './types'
+import { Panel } from '~/components/Panel'
+import SlidePanel from './SlidePanel'
 
-const SlidePanel = (props: ContainerProps): JSX.Element => (
-  <Subscribe to={[ThemeContainer, SlidePanelContainer]}>
-    {(
-      themeContainer: ThemeContainer,
-      slidePanelContainer: SlidePanelContainer
-    ) => {
+const SlidePanelContainer = (props: ContainerProps): JSX.Element => (
+  <Subscribe to={[AppContainer]}>
+    {(container: AppContainer) => {
       const { children } = props
-      const { isOpen } = slidePanelContainer.state
+      const { isOpen, theme } = container.state
 
       return (
-        <SlidePanelComponent
+        <SlidePanel
           isOpen={isOpen}
-          onOutsideClick={() => slidePanelContainer.toggle()}>
-          <Panel theme={themeContainer.state.theme}>{children}</Panel>
-        </SlidePanelComponent>
+          onOutsideClick={() => container.toggleSidePanel()}>
+          <Panel theme={theme}>{children}</Panel>
+        </SlidePanel>
       )
     }}
   </Subscribe>
 )
 
-export default SlidePanel
+export default SlidePanelContainer

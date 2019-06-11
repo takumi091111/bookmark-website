@@ -6,13 +6,13 @@ export const style = css`
   }
 
   &:hover {
-    background-color: red;
+    background-color: var(--background-color_hover, red);
   }
 
   position: relative;
   width: 100%;
   height: 80px;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid var(--border-color_base, inherit);
 
   padding: 10px;
 

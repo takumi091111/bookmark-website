@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import { jsx } from '@emotion/core'
 import { style } from './SearchInput.css'
 import { Props } from './types'

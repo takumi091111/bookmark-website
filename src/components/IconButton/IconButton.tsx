@@ -1,9 +1,8 @@
-/** @jsx jsx */
 import { jsx } from '@emotion/core'
-import { style } from './Icon.css'
+import { style } from './IconButton.css'
 import { Props } from './types'
 
-const Icon = (props: Props): JSX.Element => {
+const IconButton = (props: Props): JSX.Element => {
   const { children, onClick } = props
 
   return (
@@ -13,4 +12,4 @@ const Icon = (props: Props): JSX.Element => {
   )
 }
 
-export default Icon
+export default IconButton

@@ -1,9 +1,8 @@
-/** @jsx jsx */
 import { jsx } from '@emotion/core'
 import { style } from './Mobile.css'
 import { SearchingProps } from './types'
 import SearchInput from '../../SearchInput/SearchInput'
-import Icon from '../../Icon/Icon'
+import Icon from '../../IconButton/IconButton'
 import { IoIosArrowRoundBack, IoIosSearch } from 'react-icons/io'
 
 const Searching = (props: SearchingProps): JSX.Element => {

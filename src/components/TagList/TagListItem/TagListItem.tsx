@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import { jsx } from '@emotion/core'
 import { style } from './TagListItem.css'
 import { Props } from './types'

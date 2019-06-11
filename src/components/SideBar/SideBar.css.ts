@@ -1,23 +1,8 @@
-import { css, SerializedStyles } from '@emotion/core'
-import { Theme } from '../../interfaces/Theme'
+import { css } from '@emotion/core'
 
-export const style = (theme?: Theme): SerializedStyles => css`
-  color: ${theme ? theme.colors.text : 'inherit'};
-  background-color: ${theme ? theme.colors.background : 'blue'};
-
-  grid-column: 1 / 2;
-  grid-row: 1 / 3;
-
-  a {
-    color: ${theme ? theme.colors.text : 'inherit'};
-  }
-
-  li {
-    &:hover:not(.tag-list-header) {
-      background-color: ${theme ? theme.colors.highlight : 'green'};
-    }
-    border-color: ${theme ? theme.colors.border : 'inherit'};
-  }
+export const style = css`
+  color: var(--color_base, inherit);
+  background-color: var(--background-color_base, blue);
 
   @media (max-width: 767px) {
     display: none;

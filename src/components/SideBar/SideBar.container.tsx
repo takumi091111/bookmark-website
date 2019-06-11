@@ -1,18 +1,18 @@
-import * as React from 'react'
+import { jsx } from '@emotion/core'
 import { Subscribe } from 'unstated'
-import { ThemeContainer } from '../../containers/Theme'
-import SideBarComponent from './SideBar'
+import { AppContainer } from '~/containers/App'
 import { Props } from './types'
+import SideBar from './SideBar'
 
-const SideBar = (props: Props): JSX.Element => (
-  <Subscribe to={[ThemeContainer]}>
-    {(container: ThemeContainer) => {
+const SideBarContainer = (props: Props): JSX.Element => (
+  <Subscribe to={[AppContainer]}>
+    {(container: AppContainer) => {
       const { children } = props
       const { theme } = container.state
 
-      return <SideBarComponent theme={theme}>{children}</SideBarComponent>
+      return <SideBar theme={theme}>{children}</SideBar>
     }}
   </Subscribe>
 )
 
-export default SideBar
+export default SideBarContainer

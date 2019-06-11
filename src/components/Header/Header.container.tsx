@@ -1,37 +1,30 @@
-import * as React from 'react'
+import { jsx } from '@emotion/core'
 import { Subscribe } from 'unstated'
-import { ThemeContainer } from '../../containers/Theme'
-import { SearchContainer } from '../../containers/Search'
-import { SlidePanelContainer } from '../../containers/SlidePanel'
-import HeaderComponent from './Header'
+import { AppContainer } from '~/containers/App'
+import Header from './Header'
 
-const Header = (): JSX.Element => (
-  <Subscribe to={[ThemeContainer, SearchContainer, SlidePanelContainer]}>
-    {(
-      themeContainer: ThemeContainer,
-      searchContainer: SearchContainer,
-      slidePanelContainer: SlidePanelContainer
-    ) => {
-      const { theme } = themeContainer.state
-      const { searchQuery } = searchContainer.state
+const HeaderContainer = (): JSX.Element => (
+  <Subscribe to={[AppContainer]}>
+    {(container: AppContainer) => {
+      const { searchQuery, theme } = container.state
 
       const handleSearchInputChange = (
         event: React.ChangeEvent<HTMLInputElement>
       ): void => {
-        searchContainer.changeQuery(event.currentTarget.value)
+        container.changeSearchQuery(event.currentTarget.value)
       }
 
       return (
-        <HeaderComponent
+        <Header
           theme={theme}
           searchQuery={searchQuery}
-          onMenuClick={() => slidePanelContainer.toggle()}
+          onMenuClick={() => container.toggleSidePanel()}
           onSearchInputChange={handleSearchInputChange}
-          onSearchSubmit={() => searchContainer.search()}
+          onSearchSubmit={() => container.search()}
         />
       )
     }}
   </Subscribe>
 )
 
-export default Header
+export default HeaderContainer

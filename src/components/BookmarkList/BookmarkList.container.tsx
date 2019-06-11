@@ -1,25 +1,20 @@
-import * as React from 'react'
+import { jsx } from '@emotion/core'
 import { Subscribe } from 'unstated'
-import { BookmarkContainer } from '../../containers/Bookmark'
-import BookmarkListComponent from './BookmarkList'
+import { AppContainer } from '~/containers/App'
+import BookmarkList from './BookmarkList'
 
-const BookmarkList = (): JSX.Element => (
-  <Subscribe to={[BookmarkContainer]}>
-    {(container: BookmarkContainer) => {
-      const bookmarks = container.state.bookmarks
+const BookmarkListContainer = (): JSX.Element => (
+  <Subscribe to={[AppContainer]}>
+    {(container: AppContainer) => {
+      const { bookmarks } = container.state
 
       const handleItemClick = (index: number): void => {
         console.table(bookmarks[index])
       }
 
-      return (
-        <BookmarkListComponent
-          items={bookmarks}
-          onItemClick={handleItemClick}
-        />
-      )
+      return <BookmarkList items={bookmarks} onItemClick={handleItemClick} />
     }}
   </Subscribe>
 )
 
-export default BookmarkList
+export default BookmarkListContainer

@@ -1,6 +1,6 @@
 import { ReactNode, MouseEvent } from 'react'
 
 export interface Props {
-  children: ReactNode
+  children?: ReactNode
   onClick?: (event: MouseEvent<HTMLDivElement>) => void
 }
