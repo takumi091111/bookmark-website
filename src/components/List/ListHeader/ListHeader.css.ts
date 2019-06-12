@@ -5,6 +5,10 @@ export const style = css`
     border-bottom: 0px;
   }
 
+  &:hover {
+    background-color: inherit;
+  }
+
   color: inherit;
 
   position: relative;

@@ -1,6 +1,10 @@
 import { css } from '@emotion/core'
 
 export const style = css`
+  &:hover {
+    overflow-y: auto;
+  }
+
   background: transparent;
 
   position: fixed;
@@ -14,11 +18,11 @@ export const style = css`
   }
 
   transition: transform 0.35s ease;
-
   overflow-y: hidden;
   z-index: 1;
 
   @media (min-width: 768px) {
     display: none;
+    overflow-y: scroll;
   }
 `

@@ -1,21 +1,24 @@
 import { jsx } from '@emotion/core'
-import { style } from './BookmarkList.css'
 import { Props } from './types'
-import { BookmarkListItem } from './BookmarkListItem'
+import { List } from '~/components/List'
 
-const createItems = (props: Props): JSX.Element[] => {
+const BookmarkList = (props: Props): JSX.Element => {
   const { items, onItemClick } = props
-  return items.map((item, index) => (
-    <BookmarkListItem
-      key={index}
-      item={item}
-      onClick={() => onItemClick(index)}
-    />
-  ))
+  return (
+    <List>
+      {items.map((item, index) => (
+        <List.Item
+          key={index}
+          onClick={() => onItemClick(index)}
+          size="md"
+          border>
+          <h1>{item.title}</h1>
+          <h2>{item.url}</h2>
+          <a href={`#${item.url}`} />
+        </List.Item>
+      ))}
+    </List>
+  )
 }
-
-const BookmarkList = (props: Props): JSX.Element => (
-  <ul css={style}>{createItems(props)}</ul>
-)
 
 export default BookmarkList

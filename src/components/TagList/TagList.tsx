@@ -1,21 +1,20 @@
 import { jsx } from '@emotion/core'
-import { TagListHeader } from './TagListHeader'
-import { TagListItem } from './TagListItem'
-import { style } from './TagList.css'
+import { List } from '~/components/List'
 import { Props } from './types'
 
-const createItems = (props: Props): JSX.Element[] => {
+const TagList = (props: Props): JSX.Element => {
   const { items, onItemClick } = props
-  return items.map((item, index) => (
-    <TagListItem key={index} item={item} onClick={() => onItemClick(index)} />
-  ))
-}
 
-const TagList = (props: Props): JSX.Element => (
-  <ul css={style}>
-    <TagListHeader />
-    {createItems(props)}
-  </ul>
-)
+  return (
+    <List>
+      <List.Header text="Tags" />
+      {items.map((item, index) => (
+        <List.Item key={index} onClick={() => onItemClick(index)}>
+          <a href={`#${item}`}>{item}</a>
+        </List.Item>
+      ))}
+    </List>
+  )
+}
 
 export default TagList

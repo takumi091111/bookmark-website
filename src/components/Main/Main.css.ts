@@ -1,16 +1,10 @@
 import { css } from '@emotion/core'
 
 export const style = css`
-  &:hover {
-    overflow-y: auto;
-  }
-
   color: var(--color_base, inherit);
   background-color: var(--background-color_base, yellow);
 
   padding: 10px;
-
-  overflow-y: hidden;
 
   a {
     color: inherit;
