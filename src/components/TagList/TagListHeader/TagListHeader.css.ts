@@ -11,7 +11,7 @@ export const style = css`
   width: 100%;
   height: 50px;
 
-  h1 {
+  p {
     position: absolute;
 
     width: 100%;
